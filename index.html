@@ -1,18 +1,28 @@
 <!doctype html>
 <html>
-  <body>
-    <div id="content">
-      <img id="posterImage" src="poster.jpg" style="width:100%;">
-    </div>
+<head>
+    <title>2026 예비농업인 역량강화</title>
+</head>
+<body>
+    <h2 id="title">2026년 예비농업인 역량강화 (시범사업)</h2>
+    <img id="posterImage" src="poster.jpg" style="max-width:100%; height:auto;">
 
     <script>
-      // URL 뒤에 ?page=2 가 붙어있는지 확인
-      const urlParams = new URLSearchParams(window.location.search);
-      const page = urlParams.get('page');
+        // 페이지 로드 후 실행되도록 보장
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const page = urlParams.get('page');
+            const imgElement = document.getElementById('posterImage');
+            const titleElement = document.getElementById('title');
 
-      if (page === '2') {
-        document.getElementById('posterImage').src = 'poster2.jpg';
-      }
+            console.log("현재 파라미터 값:", page); // 개발자 도구(F12)에서 확인 가능
+
+            if (page === '2') {
+                // 추가모집 포스터로 교체 (신청기간: 2.27~3.6)
+                imgElement.src = 'poster2.jpg'; 
+                titleElement.innerText = "2026년 예비농업인 역량강화 (추가모집)"; [cite: 4, 8, 9]
+            }
+        };
     </script>
-  </body>
+</body>
 </html>
