@@ -1,6 +1,18 @@
 <!doctype html>
 <html>
   <body>
-    <img src="poster.jpg">
+    <div id="content">
+      <img id="posterImage" src="poster.jpg" style="width:100%;">
+    </div>
+
+    <script>
+      // URL 뒤에 ?page=2 가 붙어있는지 확인
+      const urlParams = new URLSearchParams(window.location.search);
+      const page = urlParams.get('page');
+
+      if (page === '2') {
+        document.getElementById('posterImage').src = 'poster2.jpg';
+      }
+    </script>
   </body>
 </html>
