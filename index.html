@@ -2,13 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>포스터</title>
+
 <style>
 body{
     margin:0;
     text-align:center;
     background:#000;
 }
+
 img{
     max-width:100%;
     height:auto;
@@ -18,7 +21,7 @@ img{
 
 <body>
 
-<img id="posterImage" src="img/poster.jpg">
+<img id="posterImage" src="img/poster.jpg" onerror="this.src='img/poster.jpg'">
 
 <script>
 
@@ -27,7 +30,7 @@ const page = params.get('page');
 
 const img = document.getElementById("posterImage");
 
-if(page){
+if(page && /^\d+$/.test(page)){
     img.src = "img/poster" + page + ".jpg";
 }
 
@@ -35,4 +38,3 @@ if(page){
 
 </body>
 </html>
-
