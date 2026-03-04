@@ -1,36 +1,35 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>2026 예비농업인 역량강화</title>
+<meta charset="utf-8">
+<title>포스터</title>
+<style>
+body{
+    margin:0;
+    text-align:center;
+    background:#000;
+}
+img{
+    max-width:100%;
+    height:auto;
+}
+</style>
 </head>
 
 <body>
 
-<h2 id="title">2026년 예비농업인 역량강화 (시범사업)</h2>
-
-<img id="posterImage" src="poster.jpg" style="max-width:100%; height:auto;">
+<img id="posterImage" src="poster.jpg">
 
 <script>
 
-window.onload = function () {
+const params = new URLSearchParams(window.location.search);
+const page = params.get('page');
 
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get('page');
+const img = document.getElementById("posterImage");
 
-    const img = document.getElementById('posterImage');
-    const title = document.getElementById('title');
-
-    console.log("현재 page 파라미터:", page);
-
-    if (page === "2") {
-
-        img.src = "poster2.jpg";
-        title.innerText = "2026년 예비농업인 역량강화 (추가모집)";
-
-    }
-
-};
+if(page){
+    img.src = "poster" + page + ".jpg";
+}
 
 </script>
 
