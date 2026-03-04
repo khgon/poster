@@ -18,7 +18,7 @@ img{
 
 <body>
 
-<img id="posterImage" src="poster.jpg">
+<img id="posterImage" src="img/poster.jpg">
 
 <script>
 
@@ -28,10 +28,11 @@ const page = params.get('page');
 const img = document.getElementById("posterImage");
 
 if(page){
-    img.src = "poster" + page + ".jpg";
+    img.src = "img/poster" + page + ".jpg";
 }
 
 </script>
 
 </body>
 </html>
+
